@@ -1,0 +1,216 @@
+@import "reset.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,700&display=swap');
+
+@font-face {
+    font-family: 'icons';
+    src:
+        url('../fonts/icons.ttf?ggsu4f') format('truetype'),
+        url('../fonts/icons.woff?ggsu4f') format('woff'),
+        url('../fonts/icons.svg?ggsu4f#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clear:before {
+    content: "\e900";
+}
+.icon-delete:before {
+    content: "\e901";
+}
+.icon-safe:before {
+    content: "\e902";
+}
+
+// Color-----------------------------------------------------
+$--bg-body-color: #2F3640;
+$--gray: #BBC9DD;
+$--bg-input: #4A586E;
+$--red: #D5353F;
+$--green: #35D073;
+$--btn-gray: #CFCFCF;
+$--done-gray: #bababa;
+$--yellow: #FEB946;
+// ----------------------------------------------------------
+
+body {
+    position: relative;
+    margin: 0 auto;
+    min-height: 100%;
+    max-width: 640px;
+    padding: 0 24px;
+    font:
+        14px/1.458 "Montserrat", sans-serif,
+        sans-serif;
+    font-weight: 400;
+    background-color: $--bg-body-color;
+    color: #fff;
+}
+header {
+    display: flex;
+    justify-content: center;
+    padding: 45px 0;
+
+    img {
+        max-width: 120px;
+    }
+}
+#todoForm {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 15px 0;
+    border: 1px solid $--gray;
+    border-radius: 61px;
+    background-color: $--bg-input;
+
+    input {
+        padding: 0 20px;
+        border: none;
+        outline: none;
+        width: 100%;
+        background-color: $--bg-input; 
+        border-radius: 61px;
+
+        &::placeholder {
+            color: #fff;
+        }
+    }
+}
+.task-button {
+    width: 257px;
+    height: 45px;
+    border: 0;
+    background-color: $--green;
+    color: #fff;
+    border-radius: 61px;
+    transition: background 200ms;
+    outline: none;
+
+    &.edit {
+        background-color: $--red;
+    }
+}
+.empty-list {
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 10px;
+    color: $--btn-gray;
+    font-size: 24px;
+    background-color: $--bg-input;
+
+    &.none-empty-list {
+        display: none !important;
+    }
+}
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 30px;
+    border-radius: 79px;
+    border: 1px transparent;
+    background-color: $--bg-input; 
+    cursor: pointer;
+
+    &.edit-item {
+        border: 1px solid $--gray;
+    }
+}
+.todo-title {
+    font-size: 16px;
+    font-weight: 600;
+
+    &.todo-title-done {
+        color: $--done-gray;
+    }
+}
+.todo-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.button-done {
+    padding: 8px 13px;
+    color: #fff;
+    border-radius: 10px;
+    background-color: $--red;
+
+    &.checked {
+        background-color: $--green;
+    }
+}
+.icon-done:before {
+    content: "\e902";
+}
+.icon-delete:before {
+    content: "\e901";
+}
+.icon-done,
+.icon-delete {
+    font-size: 18px;
+}
+.button-delete {
+    padding: 8px 5px;
+    color: $--btn-gray;
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: $--red;
+        }
+    }
+}
+.button-done,
+.button-delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 8px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.clean-button {
+    display: none;
+
+    &.visible-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        width: 90px;
+        margin: 25px auto 0 auto;
+        padding: 5px;
+        color: $--yellow;
+        font-size: 12px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $--red;
+            }
+        }
+        .icon-clean {
+            &:before {
+                content: "\e900";
+            }
+        }
+    }
+}

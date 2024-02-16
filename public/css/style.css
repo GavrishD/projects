@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+}
+
+textarea,
+button,
+input {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.ttf?ggsu4f") format("truetype"), url("../fonts/icons.woff?ggsu4f") format("woff"), url("../fonts/icons.svg?ggsu4f#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-], [class*=" icon-"] {
+  font-family: "icons" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clear:before {
+  content: "\e900";
+}
+
+.icon-delete:before {
+  content: "\e901";
+}
+
+.icon-safe:before {
+  content: "\e902";
+}
+
+body {
+  position: relative;
+  margin: 0 auto;
+  min-height: 100%;
+  max-width: 640px;
+  padding: 0 24px;
+  font: 14px/1.458 "Montserrat", sans-serif, sans-serif;
+  font-weight: 400;
+  background-color: #2F3640;
+  color: #fff;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 45px 0;
+}
+header img {
+  max-width: 120px;
+}
+
+#todoForm {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 0 15px 0;
+  border: 1px solid #BBC9DD;
+  border-radius: 61px;
+  background-color: #4A586E;
+}
+#todoForm input {
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #4A586E;
+  border-radius: 61px;
+}
+#todoForm input::-webkit-input-placeholder {
+  color: #fff;
+}
+#todoForm input::-moz-placeholder {
+  color: #fff;
+}
+#todoForm input:-ms-input-placeholder {
+  color: #fff;
+}
+#todoForm input::-ms-input-placeholder {
+  color: #fff;
+}
+#todoForm input::placeholder {
+  color: #fff;
+}
+
+.task-button {
+  width: 257px;
+  height: 45px;
+  border: 0;
+  background-color: #35D073;
+  color: #fff;
+  border-radius: 61px;
+  -webkit-transition: background 200ms;
+  -o-transition: background 200ms;
+  transition: background 200ms;
+  outline: none;
+}
+.task-button.edit {
+  background-color: #D5353F;
+}
+
+.empty-list {
+  text-align: center;
+  padding: 20px 0;
+  border-radius: 10px;
+  color: #CFCFCF;
+  font-size: 24px;
+  background-color: #4A586E;
+}
+.empty-list.none-empty-list {
+  display: none !important;
+}
+
+.todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
+  padding: 10px 30px;
+  border-radius: 79px;
+  border: 1px transparent;
+  background-color: #4A586E;
+  cursor: pointer;
+}
+.todo-item.edit-item {
+  border: 1px solid #BBC9DD;
+}
+
+.todo-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.todo-title.todo-title-done {
+  color: #bababa;
+}
+
+.todo-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.button-done {
+  padding: 8px 13px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #D5353F;
+}
+.button-done.checked {
+  background-color: #35D073;
+}
+
+.icon-done:before {
+  content: "\e902";
+}
+
+.icon-delete:before {
+  content: "\e901";
+}
+
+.icon-done,
+.icon-delete {
+  font-size: 18px;
+}
+
+.button-delete {
+  padding: 8px 5px;
+  color: #CFCFCF;
+}
+@media (any-hover: hover) {
+  .button-delete:hover {
+    color: #D5353F;
+  }
+}
+
+.button-done,
+.button-delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  font-size: 8px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.clean-button {
+  display: none;
+}
+.clean-button.visible-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+  width: 90px;
+  margin: 25px auto 0 auto;
+  padding: 5px;
+  color: #FEB946;
+  font-size: 12px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media (any-hover: hover) {
+  .clean-button.visible-button:hover {
+    color: #D5353F;
+  }
+}
+.clean-button.visible-button .icon-clean:before {
+  content: "\e900";
+}
