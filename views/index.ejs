@@ -11,13 +11,17 @@
         <img src="/img/todo_list.png" alt="To Do list">
     </header>
     <main>
-        <form id="todoForm" action="/add" method="post">
+        <!-- <form id="todoForm" action="/add" method="post">
             <input id="task" type="text" name="task" required="required" placeholder="Enter your note...">
             <button type="submit" class="task-button">Save</button>
         </form>
         <div id="emptyList" class="empty-list">To-do list is empty</div>
         <ul id="tasksList"></ul>
-        <button type="button" class="clean-button" onclick="cleanAllTasks()"><span class="icon-clean"></span>Clean items</button>
+        <button type="button" class="clean-button" onclick="cleanAllTasks()"><span class="icon-clean"></span>Clean items</button> -->
+        <form action="/add" method="post">
+            <input id="task" type="text" name="task" required="required" placeholder="Enter your note...">
+            <button type="submit">Save</button>
+        </form>
     </main>
     <script src="/js/script.js"></script>
 </body>
